@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Install pyLODE
-      run: pip3 install wheel pylode
+      run: pip install wheel pylode
     - name: Build HTML
       run: mkdir -p public && pylode -i agrif.ttl -o public/index.html
 
