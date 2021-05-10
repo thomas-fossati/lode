@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v1
+    - name: Install wheel
+      run: pip install wheel && python setup.py bdist_wheel
     - name: Install pyLODE
       run: pip install pylode
     - name: Build HTML
