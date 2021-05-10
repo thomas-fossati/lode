@@ -10,10 +10,8 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v1
-    - name: Install wheel
-      run: pip install wheel
     - name: Install pyLODE
-      run: pip install pylode
+      run: pip3 install wheel pylode
     - name: Build HTML
       run: mkdir -p public && pylode -i agrif.ttl -o public/index.html
 
