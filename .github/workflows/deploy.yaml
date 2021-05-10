@@ -16,10 +16,10 @@ jobs:
       run: pip install pylode
     - name: Build HTML
       run: mkdir -p public && pylode -i agrif.ttl -o public/index.html
-
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v2
+      uses: crazy-max/ghaction-github-pages@v2
+      with:
+        target_branch: gh-pages
+        build_dir: public
       env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./public
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
